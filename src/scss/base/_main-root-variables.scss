@@ -1,0 +1,27 @@
+@use 'main-constants' as const;
+
+:root {
+--font-primary: #{const.$font-primary};
+--font-secondary: #{const.$font-secondary};
+// font-weight
+--fw-light: #{const.$fw-light};
+--fw-regular: #{const.$fw-regular};
+--fw-medium: #{const.$fw-medium};
+--fw-semibold: #{const.$fw-semibold};
+--fw-bold: #{const.$fw-bold};
+// colors
+--color-gold: #{const.$color-gold};
+--color-gold-dark: #{const.$color-gold-dark};
+--color-gold-light: #{const.$color-gold-light};
+--color-charcoal: #{const.$color-charcoal};
+--color-dark: #{const.$color-dark};
+--color-navy: #{const.$color-navy};
+--color-white: #{const.$color-white};
+--color-off-white: #{const.$color-off-white};
+--color-gray-light: #{const.$color-gray-light};
+--color-gray: #{const.$color-gray};
+--color-gray-dark: #{const.$color-gray-dark};
+--color-success: #{const.$color-success};
+--color-error: #{const.$color-error};
+--color-warning: #{const.$color-warning};
+}

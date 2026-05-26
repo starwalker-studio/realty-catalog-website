@@ -1,0 +1,14 @@
+.filter_bar {
+  position: relative;
+  z-index: 10;
+  margin-top: -50px; // la mitad de su propia altura aproximada
+  // o con transform:
+  transform: translateY(40%);
+  background-color: aqua;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2ex;
+  padding: 3ex;
+  border-radius: 12px;
+}
