@@ -4,7 +4,7 @@
 .hero_section {
   @include background-section-style;
   background-image: url("/images/hero/hero.jpg");
-  height: 10vh;
+  height: 82vh;
 }
 
 .overlay {
@@ -113,5 +113,5 @@
   transform: translate(-50%, 50%);
   z-index: 10;
   width: 90%;
-  max-width: 1300px;
+  max-width: 1500px;
 }

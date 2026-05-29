@@ -1,10 +1,20 @@
+import { useRef } from "react";
 import { Catalog, Hero } from "./sections";
 
 export const Home = () => {
+  const catalog = useRef<HTMLDivElement>(null);
+
+  const handleNavigate = (section: "catalog") => {
+    const map = {
+      catalog: catalog,
+    };
+
+    map[section].current?.scrollIntoView({ behavior: "smooth" });
+  };
   return (
     <>
-      <Hero />
-      <Catalog />
+      <Hero onNavigate={handleNavigate} />
+      <Catalog ref={catalog} />
     </>
   );
 };

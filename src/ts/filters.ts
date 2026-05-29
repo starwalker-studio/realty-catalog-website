@@ -4,25 +4,25 @@ export interface FilterOption {
 }
 
 export interface FilterConfig {
-  types: FilterOption[];
-  statuses: FilterOption[];
-  boroughs: FilterOption[];
-  priceRanges: FilterOption[];
+  type: FilterOption[];
+  status: FilterOption[];
+  borough: FilterOption[];
+  priceRange: FilterOption[];
 }
 
 export const filterConfig: FilterConfig = {
-  types: [
+  type: [
     { value: "", label: "Todos" },
     { value: "casa", label: "Casa" },
     { value: "departamento", label: "Departamento" },
     { value: "penthouse", label: "Penthouse" },
   ],
-  statuses: [
+  status: [
     { value: "", label: "Todas" },
     { value: "venta", label: "Venta" },
     { value: "renta", label: "Renta" },
   ],
-  boroughs: [
+  borough: [
     { value: "", label: "Todas" },
     { value: "Miguel Hidalgo", label: "Miguel Hidalgo" },
     { value: "Cuajimalpa", label: "Cuajimalpa" },
@@ -32,7 +32,7 @@ export const filterConfig: FilterConfig = {
     { value: "Benito Juárez", label: "Benito Juárez" },
     { value: "Xochimilco", label: "Xochimilco" },
   ],
-  priceRanges: [
+  priceRange: [
     { value: "", label: "Sin límite" },
     { value: "5000000", label: "$5M MXN" },
     { value: "10000000", label: "$10M MXN" },

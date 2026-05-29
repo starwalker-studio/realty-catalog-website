@@ -1,0 +1,213 @@
+@use "/src/scss/common" as *;
+@forward "/src/scss/base/";
+
+.p_detail_section {
+  @include section;
+  background-color: var(--color-gray-light);
+}
+.p_detail_container {
+  @include container;
+}
+.p_detail_wrapper {
+  @include wrapper;
+}
+
+.p_detail_content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 1080px;
+  position: relative;
+  z-index: 2;
+  padding: 1rem;
+  .p_detail_header {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    .header_location {
+      margin: 12px 0;
+      display: flex;
+      gap: 1ex;
+    }
+  }
+  .p_detail_image {
+    margin: 2ex 0;
+    background-color: var(--color-white);
+    padding: 2.8ex;
+    height: 500px;
+    border-radius: 12px;
+    img {
+      border-radius: 12px;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.p_detail_section_2 {
+  @include section;
+  background-color: var(--color-white);
+}
+.p_detail_container_2 {
+  @include container;
+}
+.p_detail_wrapper_2 {
+  @include wrapper;
+}
+
+.top_border {
+  width: 100%;
+  border: solid 1px var(--color-gray);
+  opacity: .4;
+}
+
+.p_detail_grid {
+  margin: 2ex 0;
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 2ex;
+  .p_description {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 3ex;
+    padding: 2ex;
+    h4 {
+        font-size: 2.13rem;
+    }
+    .p_specs {
+      ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2ex;
+      }
+      span {
+        margin-right: 5px;
+        opacity: 0.6;
+      }
+      li {
+        font-size: 0.95rem;
+        opacity: 0.9;
+        display: flex;
+        align-items: center;
+      }
+    }
+    .amenities {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      width: 100%;
+      h5 {
+        font-size: 1.38rem;
+        margin: 0 0 20px;
+      }
+      li {
+        opacity: 0.9;
+        font-size: 0.95rem;
+      }
+    }
+  }
+  .action_box {
+    background-color: var(--color-gray-light);
+    border-radius: 12px;
+    padding: 2ex;
+    .price_detail {
+        h4 {
+            font-size: 2rem;
+        }
+        p {
+            font-size: .85rem;
+        }
+    }
+    .buttons {
+      margin: 20px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      gap: 2ex;
+      span {
+        font-size: 1.2rem;
+      }
+      button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.8ex;
+        padding: 2ex;
+        width: 100%;
+        border-radius: 12px;
+        font-size: 1rem;
+        font-weight: 800;
+        transition: 0.2s ease-out;
+      }
+      button[data-color="whats"] {
+        background-color: #20b657;
+        color: var(--color-white);
+        &:hover {
+          background-color: #1b9448;
+        }
+      }
+      button[data-color="call"] {
+        background-color: #2570d3;
+        color: var(--color-white);
+        &:hover {
+          background-color: #1f58a3;
+        }
+      }
+    }
+  }
+}
+
+.contact_form {
+  margin-top: 3ex;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8ex;
+
+  h4 {
+    margin-bottom: 1ex;
+  }
+
+  .form_group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6ex;
+
+    label {
+      font-size: 0.85rem;
+      font-weight: 500;
+      opacity: 0.7;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 1.4ex;
+      border-radius: 8px;
+      border: solid 1px var(--color-gray);
+      background-color: var(--color-white);
+      font-size: 0.9rem;
+      resize: none;
+      &:focus {
+        outline: none;
+        border-color: var(--color-gold);
+      }
+    }
+  }
+
+  .submit_btn {
+    width: 100%;
+    padding: 2ex;
+    border-radius: 12px;
+    background-color: var(--color-gold-dark);
+    color: var(--color-white);
+    font-size: 1rem;
+    font-weight: 800;
+    transition: 0.2s ease-out;
+    &:hover {
+      background-color: var(--color-gold);
+    }
+  }
+}

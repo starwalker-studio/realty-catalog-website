@@ -1,0 +1,42 @@
+@forward "/src/scss/base/";
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1ex;
+  padding: 0 0 3ex;
+  .page {
+    display: flex;
+    gap: .8ex;
+      button[data-color="white"]{
+        background-color: var(--color-white);
+        width: 40px;
+        color: black;
+      }
+      button[data-color="gold"]{
+        background-color: var(--color-gold-light);
+        width: 40px;
+        color: black;
+      }
+  }
+  button {
+    cursor: pointer;
+    border: none;
+    cursor: pointer;
+    padding: 0.55rem;
+    border-radius: 12px;
+    background-color: var(--color-gold-dark);
+    width: 70px;
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: var(--color-white);
+    transition: 0.3s ease;
+    border: solid 1px transparent;
+    &:hover {
+      border: solid 1px var(--color-gold-dark);
+      color: var(--color-dark);
+      background-color: var(--color-gold-light);
+    }
+  }
+}

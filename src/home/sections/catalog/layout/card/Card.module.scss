@@ -1,0 +1,116 @@
+@forward "/src/scss/base/";
+
+.no_property {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1ex;
+  padding: 2rem 0 5rem;
+  span {
+    font-size: 8rem;
+  }
+}
+.catalog_grid {
+  margin: 4ex 0;
+  padding: 3ex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.8ex;
+  .catalog_card {
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: 0.2s ease-out;
+    &:hover {
+      box-shadow: -1px 5px 13px -1px rgba(0, 0, 0, 0.58);
+      -webkit-box-shadow: -1px 5px 13px -1px rgba(0, 0, 0, 0.58);
+      -moz-box-shadow: -1px 5px 13px -1px rgba(0, 0, 0, 0.58);
+      border-radius: 12px;;
+    }
+    img {
+      border-radius: 12px 12px 0 0;
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 4 / 2.2;
+      object-fit: cover;
+      display: block;
+      mix-blend-mode: multiply;
+    }
+    .card_description {
+      position: relative;
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 0.23) 100%
+      );
+      border-radius: 0 0 12px 12px;
+      padding: 2.8ex;
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 0 0 12px 12px;
+        padding: 1px;
+        background: linear-gradient(
+          0deg,
+          rgba(168, 135, 58, 0.329) 0%,
+          rgba(255, 255, 255, 0.23) 100%
+        );
+        -webkit-mask:
+          linear-gradient(#fff 0 0) content-box,
+          linear-gradient(#fff 0 0);
+        mask:
+          linear-gradient(#fff 0 0) content-box,
+          linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        pointer-events: none;
+      }
+      .card_price {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        p[data-color="price"] {
+          font-size: 2.8ex;
+          font-weight: 900;
+          color: var(--color-gold);
+        }
+        p {
+          font-weight: 900;
+        }
+      }
+      .card_title {
+        margin: 10px 0;
+        h3 {
+          font-size: 1rem;
+        }
+      }
+      .card_desc {
+        margin: 10px 0;
+        p {
+          font-size: 0.7rem;
+          opacity: 0.6;
+        }
+      }
+      .card_specs {
+        border-top: solid 1px #6d6c6ca1;
+        color: var(--color-gray-dark);
+        opacity: 0.75;
+        ul {
+          margin-top: 10px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          li {
+            display: flex;
+            gap: 4px;
+            font-size: 0.85rem;
+          }
+        }
+      }
+    }
+  }
+}

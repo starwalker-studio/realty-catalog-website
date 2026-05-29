@@ -3,7 +3,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FilterBar } from "../filter/FilterBar";
 import style from "./Hero.module.scss";
 
-export const Hero = () => {
+type HeroProps = {
+  onNavigate: (section: "catalog") => void;
+};
+
+export const Hero = ({onNavigate}:HeroProps) => {
   return (
     <section className={style.hero_section}>
       <div className={style.overlay} />
@@ -17,7 +21,7 @@ export const Hero = () => {
               colonias más exclusivas de la capital.
             </p>
             <div>
-              <button>Ver propiedades</button>
+              <button onClick={() => onNavigate("catalog")} >Ver propiedades</button>
             </div>
           </div>
           <div className={style.grid_services}>
@@ -28,7 +32,7 @@ export const Hero = () => {
                 </span>
                 <h1>Propiedades</h1>
               </div>
-              <p>4 casas | 3 departamentos | 2 penthouses</p>
+              <p>6 casas | 6 departamentos | 6 penthouses</p>
             </div>
             <div className={style.grid_card}>
               <div className={style.card_header}>
@@ -43,7 +47,7 @@ export const Hero = () => {
         </div>
       </div>
       <div className={style.filter_wrapper}>
-        <FilterBar />
+        <FilterBar onNavigate={onNavigate}/>
       </div>
     </section>
   );

@@ -1,14 +1,69 @@
+@forward "/src/scss/base/";
+
 .filter_bar {
   position: relative;
   z-index: 10;
-  margin-top: -50px; // la mitad de su propia altura aproximada
-  // o con transform:
-  transform: translateY(40%);
-  background-color: aqua;
+  margin-top: -50px;
+  transform: translateY(18%);
+  background-color: var(--color-gray-dark);
+  gap: 2ex;
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+.filter_container {
+  border-radius: 12px;
+  background-color: var(--color-gray-light);
   display: flex;
+  gap: 3.6ex;
   justify-content: center;
   align-items: center;
-  gap: 2ex;
-  padding: 3ex;
-  border-radius: 12px;
+  padding: 2.8rem;
+  .filter_header {
+    display: flex;
+    align-items: center;
+    h3 {
+      font-weight: 700;
+      font-size: 1.3rem;
+    }
+  }
+  .filter_group {
+    display: flex;
+    align-items: center;
+    gap: 1.3ex;
+    label {
+      font-size: 0.8rem;
+    }
+    select {
+      border: none;
+      cursor: pointer;
+      padding: 0.55rem;
+      border-radius: 12px;
+      background-color: var(--color-white);
+      width: 127px;
+      font-size: 0.8rem;
+      &:focus {
+        outline: solid 1px var(--color-gold-dark);
+      }
+    }
+  }
+  button {
+    cursor: pointer;
+    border: none;
+    cursor: pointer;
+    padding: 0.55rem;
+    border-radius: 12px;
+    background-color: var(--color-gold-dark);
+    width: 127px;
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: var(--color-white);
+    transition: .3s ease;
+    border: solid 1px transparent;
+    &:hover {
+      border: solid 1px var(--color-gold-dark);
+      color: var(--color-dark);
+      background-color: var(--color-gold-light);
+    }
+  }  
 }
