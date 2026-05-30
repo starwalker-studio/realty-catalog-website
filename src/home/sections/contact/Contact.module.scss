@@ -1,0 +1,102 @@
+@use "/src/scss/common" as *;
+@forward "/src/scss/base/";
+
+.contact_section {
+  @include section;
+  background-color: var(--color-off-white);
+}
+.contact_container {
+  @include container;
+}
+.contact_wrapper {
+  @include wrapper;
+}
+
+.contact_header {
+  text-align: center;
+  margin-bottom: 5ex;
+  h2 {
+    font-size: clamp(1.6rem, 3.5vw, 2.8rem);
+  }
+  p {
+    opacity: 0.6;
+    margin-top: 1ex;
+  }
+}
+
+.contact_grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 4ex;
+  align-items: start;
+}
+
+.contact_info {
+  display: flex;
+  flex-direction: column;
+  gap: 3ex;
+
+  .info_item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5ex;
+    span {
+      font-size: 1.2rem;
+      color: var(--color-gold);
+      margin-top: 2px;
+    }
+    .label {
+      font-size: 0.78rem;
+      opacity: 0.55;
+      margin-bottom: 2px;
+    }
+    p {
+      font-size: 0.95rem;
+    }
+  }
+}
+
+.contact_form {
+  display: flex;
+  flex-direction: column;
+  gap: 2ex;
+
+  .form_group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6ex;
+    label {
+      font-size: 0.85rem;
+      font-weight: 500;
+      opacity: 0.7;
+    }
+    input,
+    textarea {
+      width: 100%;
+      padding: 1.4ex;
+      border-radius: 8px;
+      border: solid 1px var(--color-gray);
+      background-color: var(--color-white);
+      font-size: 0.9rem;
+      resize: none;
+      &:focus {
+        outline: none;
+        border-color: var(--color-gold);
+      }
+    }
+  }
+
+  .submit_btn {
+    width: 100%;
+    padding: 2ex;
+    border-radius: 12px;
+    background-color: var(--color-gold-dark);
+    color: var(--color-white);
+    font-size: 1rem;
+    font-weight: 800;
+    transition: 0.2s ease-out;
+    &:hover {
+      background-color: var(--color-gold);
+    }
+  }
+}

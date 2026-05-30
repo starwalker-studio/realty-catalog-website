@@ -9,12 +9,12 @@
   @include container;
 }
 .catalog_wrapper {
-  @include wrapper;
+  @include wrapper;  
 }
 .catalog_content {
   border-radius: 12px;
   background-color: var(--color-gray-light);
-  margin-top: 25ex;
+  margin-top: 5ex;
   padding: 3ex;
   .catalog_header {
     margin: 6ex 0;

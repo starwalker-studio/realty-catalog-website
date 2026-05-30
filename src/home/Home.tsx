@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { Catalog, Hero } from "./sections";
+import { Catalog, Contact, Hero, Reviews, WhyUs } from "./sections";
 
 export const Home = () => {
   const catalog = useRef<HTMLDivElement>(null);
@@ -15,6 +15,9 @@ export const Home = () => {
     <>
       <Hero onNavigate={handleNavigate} />
       <Catalog ref={catalog} />
+      <WhyUs />
+      <Reviews />
+      <Contact />
     </>
   );
 };

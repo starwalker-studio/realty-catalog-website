@@ -1,7 +1,4 @@
-import {
-  faAngleLeft,
-  faAngleRight,
-} from "@fortawesome/free-solid-svg-icons";
+import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { usePropertyStore } from "../../../../../api/store";
 import style from "./Paginator.module.scss";
@@ -50,7 +47,9 @@ export const Paginator = () => {
         </div>
       ) : (
         <div className={style.pagination}>
-          <button onClick={resetFilters}>Ver todo</button>
+          <div className={style.see_all_button}>
+            <button onClick={resetFilters}>Ver todo</button>
+          </div>
         </div>
       )}
     </>

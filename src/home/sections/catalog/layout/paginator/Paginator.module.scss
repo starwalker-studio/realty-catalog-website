@@ -21,7 +21,6 @@
       }
   }
   button {
-    cursor: pointer;
     border: none;
     cursor: pointer;
     padding: 0.55rem;
@@ -39,4 +38,10 @@
       background-color: var(--color-gold-light);
     }
   }
+  .see_all_button {
+    button {  
+      width: 100px;
+    }
+  }
 }
+

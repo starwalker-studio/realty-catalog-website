@@ -1,0 +1,82 @@
+@use "/src/scss/common" as *;
+@forward "/src/scss/base/";
+
+.reviews_section {
+  @include section;
+  background-color: var(--color-white);
+}
+.reviews_container {
+  @include container;
+}
+.reviews_wrapper {
+  @include wrapper;
+}
+
+.reviews_header {
+  text-align: center;
+  margin-bottom: 5ex;
+  h2 {
+    font-size: clamp(1.6rem, 3.5vw, 2.8rem);
+  }
+  p {
+    opacity: 0.6;
+    margin-top: 1ex;
+  }
+}
+
+.reviews_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2ex;
+}
+
+.review_card {
+  background-color: var(--color-off-white);
+  border-radius: 12px;
+  padding: 3ex;
+  display: flex;
+  flex-direction: column;
+  gap: 2ex;
+
+  .stars {
+    display: flex;
+    gap: 4px;
+    color: var(--color-gold);
+    font-size: 1rem;
+  }
+
+  .comment {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    opacity: 0.75;
+    flex: 1;
+  }
+
+  .reviewer {
+    display: flex;
+    align-items: center;
+    gap: 1.2ex;
+  }
+
+  .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--color-gold-light);
+    color: var(--color-gold-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1rem;
+  }
+
+  .name {
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+  .role {
+    font-size: 0.78rem;
+    opacity: 0.55;
+  }
+}

@@ -1,0 +1,52 @@
+@use "/src/scss/common" as *;
+@forward "/src/scss/base/";
+
+.whyus_section {
+  @include section;
+  background-color: var(--color-off-white);
+}
+.whyus_container {
+  @include container;
+}
+.whyus_wrapper {
+  @include wrapper;
+}
+
+.whyus_header {
+  text-align: center;
+  margin: 5ex 0 5ex;
+  h2 {
+    font-size: clamp(1.6rem, 3.5vw, 2.8rem);
+  }
+  p {
+    opacity: 0.6;
+    margin-top: 1ex;
+  }
+}
+
+.whyus_grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2ex;
+}
+
+.whyus_card {
+  background-color: var(--color-white);
+  border-radius: 12px;
+  padding: 3ex;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5ex;
+  span {
+    font-size: 2rem;
+    color: var(--color-gold);
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  p {
+    font-size: 0.88rem;
+    opacity: 0.65;
+    line-height: 1.6;
+  }
+}
