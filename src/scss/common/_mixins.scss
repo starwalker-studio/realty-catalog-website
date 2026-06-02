@@ -1,3 +1,5 @@
+@use "/src/scss/utils/" as *;
+
 @mixin section {
   width: 100%;
   position: relative;
@@ -15,6 +17,15 @@
   width: 100%;
   max-width: 1700px;
   padding: 8rem;
+  @include mobile {
+    padding: 2.8rem 0 6rem;
+  }
+}
+
+@mixin property-detail-wrapper {
+  width: 100%;
+  max-width: 1300px;
+  padding: 2ex;
 }
 
 @mixin background-section-style {
@@ -28,6 +39,9 @@
   align-items: center;
   justify-content: center;
   scroll-behavior: smooth;
+  @include mobile {
+    background-attachment: scroll;
+  }
 }
 
 @mixin overlay-style {

@@ -1,4 +1,5 @@
 @use "/src/scss/common" as *;
+@use "/src/scss/utils" as *;
 @forward "/src/scss/base/";
 
 .location_section {
@@ -18,15 +19,32 @@
   grid-template-columns: 1fr 1.5fr;
   gap: 4ex;
   align-items: start;
+  @include mobile {
+    padding: 0 18px;
+    grid-template-columns: 1.4fr 1.2fr;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+  }
 }
 
 .map_block {
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
   h3 {
     margin-bottom: 2ex;
   }
 
   .map_placeholder {
+    @include mobile {
+      width: 100%;
+    }
     background-color: var(--color-dark);
+    width: 100%;
     border-radius: 12px;
     height: 220px;
     display: flex;
@@ -49,6 +67,10 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 3ex;
   padding-top: 1ex;
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+  }
 
   h5 {
     font-family: var(--font-secondary);

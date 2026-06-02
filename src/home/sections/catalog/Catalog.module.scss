@@ -1,4 +1,5 @@
 @use "/src/scss/common" as *;
+@use "/src/scss/utils/" as *;
 @forward "/src/scss/base/";
 
 .catalog_section {
@@ -14,8 +15,13 @@
 .catalog_content {
   border-radius: 12px;
   background-color: var(--color-gray-light);
-  margin-top: 5ex;
+  margin-top: 5ex;  
   padding: 3ex;
+  @include mobile {
+    border-radius: 0;
+    margin-top: 70ex;
+    padding: 1ex;
+  }
   .catalog_header {
     margin: 6ex 0;
     display: flex;
@@ -23,13 +29,23 @@
     align-items: center;
     justify-content: center;
     gap: 1.2ex;
+    @include mobile {
+      text-align: center;
+      padding: 0 12px;
+    }
     h2 {
       font-size: 2.3rem;
       font-weight: var(--fw-bold);
+      @include mobile {
+        font-size: 1.6rem;
+      }
     }
     p {
       color: var(--color-navy);
       opacity: 0.6;
+      @include mobile {
+        font-size: .8rem;
+      }
     }
   }  
 }

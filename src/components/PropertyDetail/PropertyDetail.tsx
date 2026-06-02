@@ -1,11 +1,11 @@
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import {
-    faBed,
-    faCar,
-    faLocationDot,
-    faPhone,
-    faShower,
-    faStairs,
+  faBed,
+  faCar,
+  faLocationDot,
+  faPhone,
+  faShower,
+  faStairs,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect } from "react";
@@ -16,7 +16,6 @@ import style from "./PropertyDetail.module.scss";
 export const PropertyDetail = () => {
   const { propertySlug } = useParams();
   const { findProperty, property } = usePropertyStore();
-  console.log(property);
   useEffect(() => {
     if (propertySlug) findProperty(propertySlug);
     window.scrollTo({ top: 0, behavior: 'instant' });

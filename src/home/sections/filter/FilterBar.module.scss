@@ -1,4 +1,5 @@
 @forward "/src/scss/base/";
+@use "/src/scss/utils/" as *;
 
 .filter_bar {
   position: relative;
@@ -9,6 +10,12 @@
   gap: 2ex;
   padding: 2rem;
   border-radius: 12px;
+  @include mobile {
+    transform: none;
+    margin-top: 20px;
+    position: absolute;
+    width: 100%;
+  }
 }
 
 .filter_container {
@@ -19,6 +26,11 @@
   justify-content: center;
   align-items: center;
   padding: 2.8rem;
+  width: 100%;
+  @include mobile {
+    flex-direction: column;
+    padding: 2rem 0;
+  }
   .filter_header {
     display: flex;
     align-items: center;
@@ -30,6 +42,9 @@
   .filter_group {
     display: flex;
     align-items: center;
+    @include mobile {
+      flex-direction: column;
+    }
     gap: 1.3ex;
     label {
       font-size: 0.8rem;
@@ -41,6 +56,10 @@
       border-radius: 12px;
       background-color: var(--color-white);
       width: 127px;
+      @include mobile {
+        width: 200px;
+        text-align: center;
+      }
       font-size: 0.8rem;
       &:focus {
         outline: solid 1px var(--color-gold-dark);

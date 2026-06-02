@@ -32,7 +32,13 @@ export const Card = ({ properties }: CardProps) => {
                 <img src={item.image} alt="" />
                 <div className={style.card_description}>
                   <div className={style.card_price}>
-                    <p data-color="price">${item.price}</p>
+                    <p data-color="price">
+                      {item?.price.toLocaleString("es-MX", {
+                        style: "currency",
+                        currency: "MXN",
+                        maximumFractionDigits: 0,
+                      })}
+                    </p>
                     <p>{item.status}</p>
                   </div>
                   <div className={style.card_title}>

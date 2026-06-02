@@ -7,7 +7,7 @@ type HeroProps = {
   onNavigate: (section: "catalog") => void;
 };
 
-export const Hero = ({onNavigate}:HeroProps) => {
+export const Hero = ({ onNavigate }: HeroProps) => {
   return (
     <section className={style.hero_section}>
       <div className={style.overlay} />
@@ -21,7 +21,9 @@ export const Hero = ({onNavigate}:HeroProps) => {
               colonias más exclusivas de la capital.
             </p>
             <div>
-              <button onClick={() => onNavigate("catalog")} >Ver propiedades</button>
+              <button onClick={() => onNavigate("catalog")}>
+                Ver propiedades
+              </button>
             </div>
           </div>
           <div className={style.grid_services}>
@@ -47,7 +49,7 @@ export const Hero = ({onNavigate}:HeroProps) => {
         </div>
       </div>
       <div className={style.filter_wrapper}>
-        <FilterBar onNavigate={onNavigate}/>
+        <FilterBar onNavigate={onNavigate} />
       </div>
     </section>
   );

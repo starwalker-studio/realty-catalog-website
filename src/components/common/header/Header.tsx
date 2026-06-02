@@ -1,27 +1,33 @@
-import { faAlignJustify } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBars,
+  faBriefcase,
+  faBuilding,
+  faHouse,
+  faStar,
+  faXmark,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useMobileScreen } from "../../../hooks/useMobileScreen";
 import style from "./Header.module.scss";
 
 export const Header = () => {
   const { isMobileScreen, handleClick, nav_transition } = useMobileScreen();
+  const isMobile = isMobileScreen();
+
   return (
     <>
       <div className={style.navbar}>
         <div className={style.navbar_wrapper}>
           <div className={style.nav_logo_wrapper}>
             <div className={style.logo}>
-              <img src="/logo/altura-realty-logo.svg" alt="" />
+              <img src="/logo/altura-realty-logo.svg" alt="Altura Realty" />
             </div>
           </div>
-          {isMobileScreen() ? (
-            <>
-              <div className={style.mobile_icon}>
-                <span onClick={() => handleClick()}>
-                  <FontAwesomeIcon icon={faAlignJustify} />
-                </span>
-              </div>
-            </>
+
+          {isMobile ? (
+            <div className={style.mobile_icon} onClick={handleClick}>
+              <FontAwesomeIcon icon={faBars} />
+            </div>
           ) : (
             <>
               <div className={style.header_content}>
@@ -39,45 +45,33 @@ export const Header = () => {
           )}
         </div>
       </div>
-      {/* {isMobileScreen() && (
-        <div className={style.nav_overlay}>
-          <nav className={style.nav_mobile} style={nav_transition}>
-            <div className={style.nav_mobile_container}>
-              <div className={style.display_pages}>
-                <h2>Secciones</h2>
-                <ul>
-                  <li>
-                    <span>
-                      <p>Nosotros</p>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <p>Propiedades</p>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <p>Servicios</p>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <p>Testimonios</p>
-                    </span>
-                  </li>
-                </ul>
-                <div
-                  className={style.button_wrapper_mobile}
-                  onClick={() => handleClick()}
-                >
-                  <button>Cerrar Menú</button>
-                </div>
-              </div>
+
+      {isMobile && (
+        <nav className={style.nav_mobile} style={nav_transition}>
+          <div className={style.nav_mobile_container}>
+            <div className={style.display_pages}>
+              <h2>Secciones</h2>
+              <ul>
+                <li>
+                  <FontAwesomeIcon icon={faBuilding} /> Nosotros
+                </li>
+                <li>
+                  <FontAwesomeIcon icon={faHouse} /> Propiedades
+                </li>
+                <li>
+                  <FontAwesomeIcon icon={faBriefcase} /> Servicios
+                </li>
+                <li>
+                  <FontAwesomeIcon icon={faStar} /> Testimonios
+                </li>
+              </ul>
+              <button className={style.close_btn} onClick={handleClick}>
+                <FontAwesomeIcon icon={faXmark} /> Cerrar Menú
+              </button>
             </div>
-          </nav>
-        </div>
-      )} */}
+          </div>
+        </nav>
+      )}
     </>
   );
 };

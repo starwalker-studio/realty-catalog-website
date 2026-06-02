@@ -1,4 +1,5 @@
 @use "/src/scss/common" as *;
+@use "/src/scss/utils/" as *;
 @forward "/src/scss/base/";
 
 .contact_section {
@@ -21,6 +22,12 @@
   p {
     opacity: 0.6;
     margin-top: 1ex;
+    @include mobile {
+      font-size: 0.79rem;
+    }
+  }
+  @include mobile {
+    padding: 1ex 2ex;
   }
 }
 
@@ -29,6 +36,13 @@
   grid-template-columns: 1fr 1.4fr;
   gap: 4ex;
   align-items: start;
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5ex;
+  }
 }
 
 .contact_info {
@@ -60,6 +74,10 @@
   display: flex;
   flex-direction: column;
   gap: 2ex;
+  @include mobile {
+    padding: 0 4ex;
+    width: 100%;  
+  }
 
   .form_group {
     display: flex;

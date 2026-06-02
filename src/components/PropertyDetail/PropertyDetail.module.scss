@@ -1,4 +1,5 @@
 @use "/src/scss/common" as *;
+@use "/src/scss/utils" as *;
 @forward "/src/scss/base/";
 
 .p_detail_section {
@@ -8,8 +9,8 @@
 .p_detail_container {
   @include container;
 }
-.p_detail_wrapper {
-  @include wrapper;
+.property-detail-wrapper {
+  @include property-detail-wrapper;
 }
 
 .p_detail_content {
@@ -26,8 +27,9 @@
     display: flex;
     flex-direction: column;
     align-items: start;
+    gap: 2ex;
     .header_location {
-      margin: 12px 0;
+      margin: 2px 0;
       display: flex;
       gap: 1ex;
     }
@@ -36,8 +38,14 @@
     margin: 2ex 0;
     background-color: var(--color-white);
     padding: 2.8ex;
-    height: 500px;
+    height: 550px;
+    width: 1000px;
     border-radius: 12px;
+    @include mobile {
+      width: 100%;
+      height: 500px;
+      padding: 0;
+    }
     img {
       border-radius: 12px;
       width: 100%;
@@ -55,7 +63,7 @@
   @include container;
 }
 .p_detail_wrapper_2 {
-  @include wrapper;
+  @include property-detail-wrapper;
 }
 
 .top_border {
@@ -69,12 +77,20 @@
   display: grid;
   grid-template-columns: 1fr 360px;
   gap: 2ex;
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+  }
   .p_description {
     display: flex;
     flex-direction: column;
     align-items: start;
     gap: 3ex;
     padding: 2ex;
+    @include mobile {
+      margin-bottom: 6ex;
+    }
     h4 {
         font-size: 2.13rem;
     }
@@ -99,6 +115,11 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       width: 100%;
+      @include mobile {
+        display: flex;
+        flex-direction: column;
+        gap: 2.6ex;
+      }
       h5 {
         font-size: 1.38rem;
         margin: 0 0 20px;

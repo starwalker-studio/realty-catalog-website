@@ -1,10 +1,16 @@
 @forward "/src/scss/base/";
 @use "/src/scss/common/" as *;
+@use "/src/scss/utils/" as *;
 
 .hero_section {
   @include background-section-style;
   background-image: url("/images/hero/hero.jpg");
   height: 82vh;
+  height: 82dvh;
+  @include mobile {
+    min-height: 700px;
+    height: auto;
+  }
 }
 
 .overlay {
@@ -17,17 +23,25 @@
   height: 100%;
   justify-content: center;
   margin: 0 auto;
-  width: 100%;           // ← esto faltaba
+  width: 100%;
   max-width: 1080px;
   position: relative;
   z-index: 2;
-  padding: 0 1.5rem;     // ← cambia 1ex por rem y horizontal solamente
+  padding: 0 1.5rem;
   color: var(--color-white);
+  @include mobile {
+    justify-content: flex-start;
+    padding: 6rem 1.2rem 2rem;
+  }
 
   .hero_grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2ex;
+    @include mobile {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
 
     .grid_main {
       width: 100%;
@@ -42,7 +56,7 @@
       box-shadow: -1px 1px 20px 2px rgba(0, 0, 0, 0.35);
 
       h1 {
-        font-size: clamp(2rem, 4vw, 4.6rem); // ← clamp para que escale
+        font-size: clamp(2rem, 4vw, 4.6rem);
       }
       h1[data-color="gold"] {
         font-weight: 100;
@@ -62,6 +76,7 @@
         background-color: var(--color-gold-dark);
         font-weight: 800;
         font-size: 0.84rem;
+        cursor: pointer;
       }
     }
 
@@ -82,6 +97,9 @@
         padding: 2.8ex;
         border-radius: 12px;
         box-shadow: -1px 1px 20px 2px rgba(0, 0, 0, 0.35);
+        @include mobile {
+          flex: 1;
+        }
 
         .card_header {
           display: flex;
@@ -117,48 +135,11 @@
   z-index: 10;
   width: 90%;
   max-width: 1500px;
-}
-
-// ── Tablet ────────────────────────────────────────
-@media (max-width: 768px) {
-  .hero_section {
-    height: auto;
-    min-height: 100svh; // svh es más confiable en móvil que vh
-    padding-bottom: 80px; // espacio para el filter_wrapper
-  }
-
-  .hero_content {
-    justify-content: flex-start;
-    padding: 6rem 1.2rem 2rem; // top para que no quede pegado al nav
-
-    .hero_grid {
-      grid-template-columns: 1fr; // ← una columna
-      gap: 1.5rem;
-    }
-
-    .grid_services {
-      flex-direction: row; // ← cards una al lado de la otra en tablet
-
-      .grid_card {
-        flex: 1;
-      }
-    }
-  }
-}
-
-// ── Móvil ─────────────────────────────────────────
-@media (max-width: 480px) {
-  .hero_content {
-    padding: 5rem 1rem 2rem;
-
-    .hero_grid {
-      .grid_services {
-        flex-direction: column; // ← vuelven a apilarse en móvil chico
-      }
-    }
-  }
-
-  .filter_wrapper {
-    width: 95%;
+  @include mobile {
+    transform: none;
+    width: 100%;
+    margin-top: 2rem;
+    width: 100%;
+    left: 0;
   }
 }
