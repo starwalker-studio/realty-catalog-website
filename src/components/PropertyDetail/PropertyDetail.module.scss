@@ -46,6 +46,9 @@
       height: 500px;
       padding: 0;
     }
+    @include tablet {
+      @include container;
+    }
     img {
       border-radius: 12px;
       width: 100%;

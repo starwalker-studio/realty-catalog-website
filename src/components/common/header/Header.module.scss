@@ -1,3 +1,5 @@
+@use "/src/scss/utils/" as *;
+
 .navbar {
   background-color: #141414d9;
   backdrop-filter: blur(0.1rem);
@@ -41,6 +43,9 @@
     height: 32px;
     display: inline-block;
     vertical-align: middle;
+    @include tablet {
+      height: 20px;
+    }
   }
 }
 

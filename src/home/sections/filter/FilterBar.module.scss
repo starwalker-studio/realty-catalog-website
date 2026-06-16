@@ -16,6 +16,12 @@
     position: absolute;
     width: 100%;
   }
+  @include tablet {
+    padding: 1.4ex;
+  }
+  // @include tablet-pro {
+  //   padding: 1.4ex;
+  // }
 }
 
 .filter_container {
@@ -31,12 +37,27 @@
     flex-direction: column;
     padding: 2rem 0;
   }
+  @include tablet {
+    gap: 2.3ex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  @include tablet-pro {
+    padding: 2.8rem 1rem;
+    gap: 1.3ex;
+  }
   .filter_header {
     display: flex;
     align-items: center;
     h3 {
       font-weight: 700;
       font-size: 1.3rem;
+      @include tablet-pro {
+        font-size: 1rem;
+      }
     }
   }
   .filter_group {
@@ -44,6 +65,11 @@
     align-items: center;
     @include mobile {
       flex-direction: column;
+    }
+    @include tablet {
+      align-items: center;
+      justify-content: start;
+      width: 100%;
     }
     gap: 1.3ex;
     label {
@@ -59,6 +85,9 @@
       @include mobile {
         width: 200px;
         text-align: center;
+      }
+      @include tablet {
+        width: 100%;
       }
       font-size: 0.8rem;
       &:focus {
@@ -79,6 +108,9 @@
     color: var(--color-white);
     transition: .3s ease;
     border: solid 1px transparent;
+    @include tablet {
+      width: 100%;
+    }
     &:hover {
       border: solid 1px var(--color-gold-dark);
       color: var(--color-dark);

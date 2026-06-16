@@ -22,6 +22,9 @@
     margin-top: 70ex;
     padding: 1ex;
   }
+  @include tablet {
+    padding: 1ex;
+  }
   .catalog_header {
     margin: 6ex 0;
     display: flex;

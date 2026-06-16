@@ -18,9 +18,17 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2.8ex;
+  justify-content: center;
+  height: 100%;
   @include mobile {
     display: flex;
     flex-direction: column;
+  }
+  @include tablet {
+    padding: 1ex;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.3ex;
+    justify-content: center;
   }
   .catalog_card {
     cursor: pointer;

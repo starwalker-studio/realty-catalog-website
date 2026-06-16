@@ -5,11 +5,20 @@
 .hero_section {
   @include background-section-style;
   background-image: url("/images/hero/hero.jpg");
-  height: 82vh;
-  height: 82dvh;
+  height: 89vh;
+  height: 89dvh;
   @include mobile {
-    min-height: 700px;
+    min-height: 930px;
     height: auto;
+  }
+  @include tablet-md {
+    min-height: 1140px;
+    height: auto;
+    
+  }
+  @include tablet-sm {
+    min-height: 980px;
+    height: auto;    
   }
 }
 
@@ -41,6 +50,12 @@
     @include mobile {
       grid-template-columns: 1fr;
       gap: 1.5rem;
+    }
+    @include tablet-sm {
+      grid-template-columns: 1fr;
+    }
+    @include tablet-md {
+      grid-template-columns: 1fr;
     }
 
     .grid_main {
@@ -139,7 +154,12 @@
     transform: none;
     width: 100%;
     margin-top: 2rem;
+    left: 0;
+  }
+  @include tablet {
+    transform: none;
     width: 100%;
+    margin-top: 2rem;
     left: 0;
   }
 }
