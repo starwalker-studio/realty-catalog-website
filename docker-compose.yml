@@ -18,7 +18,7 @@ services:
     container_name: realty-catalog-website-prod
     networks:
       - app-network
-  
-  networks:
-    app-network:
-      driver: bridge
+
+networks:
+  app-network:
+    driver: bridge
