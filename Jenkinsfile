@@ -1,7 +1,10 @@
 pipeline {
+    agent any
+
     environment {
         COMPOSE_FILE_PROD = 'docker-compose.yml'
     }
+
     stages {
         stage('Clonar repositorio') {
             steps {
@@ -37,6 +40,7 @@ pipeline {
             }
         }
     }
+    
     options {
        timestamps()
     }
