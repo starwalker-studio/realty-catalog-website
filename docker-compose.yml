@@ -1,17 +1,24 @@
 services:
- nginx:
+  nginx:
     build:
       context: .
       dockerfile: Dockerfile.nginx
+    container_name: realty-nginx-prod
+    ports:
+      - "80:80"
+    depends_on:
+      - front-end-prod
+    networks:
+      - app-network
 
- frontend-prod:
-  build:
-    context: .
-    dockerfile: Dockerfile
-  container-name: realty-catalog-website-prod
+  frontend-prod:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: realty-catalog-website-prod
+    networks:
+      - app-network
+  
   networks:
-      app-network
-      
-networks:
-  app-network:
-    driver: bridge
+    app-network:
+      driver: bridge
