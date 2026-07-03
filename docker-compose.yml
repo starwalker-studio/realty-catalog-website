@@ -3,9 +3,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.nginx
-    container_name: realty-nginx-prod
-    ports:
-      - "80:80"
+    container_name: realty-nginx-prod    
     depends_on:
       - frontend-prod
     networks:
