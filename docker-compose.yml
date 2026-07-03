@@ -1,16 +1,17 @@
 services:
-  nginx:
+ nginx:
     build:
       context: .
       dockerfile: Dockerfile.nginx
 
-  frontend-prod:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container-name: realty-catalog-website-prod
-    networks: app-network
-
+ frontend-prod:
+  build:
+    context: .
+    dockerfile: Dockerfile
+  container-name: realty-catalog-website-prod
+  networks:
+      app-network
+      
 networks:
   app-network:
     driver: bridge
