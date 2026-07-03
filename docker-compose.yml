@@ -5,11 +5,12 @@ services:
       dockerfile: Dockerfile.nginx
     container_name: realty-nginx-prod
     ports:
-      - "81:80"
+      - "80:80"
     depends_on:
       - frontend-prod
     networks:
       - app-network
+      - proxy-network
 
   frontend-prod:
     build:
@@ -18,7 +19,10 @@ services:
     container_name: realty-catalog-website-prod
     networks:
       - app-network
+      - proxy-network
 
 networks:
   app-network:
     driver: bridge
+  proxy-network:
+    external: true 
