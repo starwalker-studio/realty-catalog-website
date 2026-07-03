@@ -7,7 +7,7 @@ services:
     ports:
       - "80:80"
     depends_on:
-      - front-end-prod
+      - frontend-prod
     networks:
       - app-network
 
